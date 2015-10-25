@@ -12,7 +12,7 @@
 	"license": "MIT",
 	"require": {
 		"hashids/hashids": "^1.0",
-		"nette/di": "^~2.3"
+		"nette/di": "~2.3"
 	},
 	"require-dev": {
 		"nette/tester": "^1.6"
