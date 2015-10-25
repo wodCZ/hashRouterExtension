@@ -1,35 +1,35 @@
 {
-    "name": "wodcz/hash-router-extension",
-    "description": "Nette Framework extension that masks ids in urls to hashes and vice versa",
-    "keywords": [
-        "nette",
-        "router",
-        "hash",
-        "extension",
-        "mask",
-        "id"
-    ],
-    "license": "MIT",
-    "require": {
-        "hashids/hashids": "^1.0",
-        "nette/di": "^~2.3"
-    },
-    "require-dev": {
-        "nette/tester": "^1.6"
-    },
-    "authors": [
-        {
-            "name": "Martin Janeček",
-            "email": "admin@ikw.cz"
-        }
-    ],
-    "homepage": "https://github.com/wodCZ/hashRouterExtension",
-    "autoload": {
-        "psr-4": {
-            "WodCZ\\HashRouterExtension\\": "src"
-        }
-    },
-    "scripts": {
-        "test": "phpunit"
-    }
+	"name": "wodcz/hash-router-extension",
+	"description": "Nette Framework extension that masks ids in urls to hashes and vice versa",
+	"keywords": [
+		"nette",
+		"router",
+		"hash",
+		"extension",
+		"mask",
+		"id"
+	],
+	"license": "MIT",
+	"require": {
+		"hashids/hashids": "^1.0",
+		"nette/di": "^~2.3"
+	},
+	"require-dev": {
+		"nette/tester": "^1.6"
+	},
+	"authors": [
+		{
+			"name": "Martin Janeček",
+			"email": "admin@ikw.cz"
+		}
+	],
+	"homepage": "https://github.com/wodCZ/hashRouterExtension",
+	"autoload": {
+		"psr-0": {
+			"WodCZ\\HashRouterExtension": "src"
+		}
+	},
+	"scripts": {
+		"test": "phpunit"
+	}
 }
