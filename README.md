@@ -19,17 +19,50 @@ Via Composer
 $ composer require wodcz/hash-router-extension
 ```
 
-## Usage
-
-``` php
+then register extension in config.neon:
 
 ```
+extensions:
+    hashRouter: WodCZ\HashRouterExtension\DI\HashRouterExtension
+```
 
-## Change log
+and finally, configure extension:
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+ **salt** is required. You should pick unique salt, so you get never-seen hashes.
+ **styles** is array of router styles, which will be handled by this extension. by default only id style is handled
+
+```
+hashRouter:
+    salt: loremipsum
+    styles: ['id']
+```
+
+
+
+## Usage
+
+After configuring styles (and cleaning cache), router will automatically hash chosen parameters when generating links 
+and, of course, will translate them back from request. 
+
+## Security, limits
+
+This extension is only wrapper for [hashids](http://hashids.org/php/) library.
+Look at their [official documentation](http://hashids.org/php/) and [repository](https://github.com/ivanakimov/hashids.php/tree/master) for more information.
+
+TLDR:
+ - there are no collisions thanks to integer to hex conversion
+ - you **can't** encode negative numbers 
+ - you **can't** encode strings 
+ - you **shouldn't** encode sensitive data 
+ - you **can't** encode numbers greater then 1,000,000,000 by default because of php limitations. [read more here](https://github.com/ivanakimov/hashids.php/tree/master#big-numbers)
+
+## Known bugs, limitations
+ - this extension currently doesn't handle component signal parameters, I'm not sure how to handle this nicely
+ 
 
 ## Testing
+
+Currently no tests are written, sorry.
 
 ``` bash
 $ composer test
